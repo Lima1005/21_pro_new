@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --bg-color:#99AABF;
+    --danger-color:#898C30;
+    --primary-color:#A68B3C;
+    --second-bg-color:#0a0a0a;
+}
 .wrapper_flex{
     margin: 0 auto;
     width: 1200px;
@@ -12,27 +18,26 @@
     flex-direction: column;
 }
 
-.box{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.header{
+    display: grid;
+    grid-template-columns:200px 1fr;
+    grid-template-columns:200px 600px ;
     font-size: 20px;
-    background-color:white;
+    background-color:var(--bg-color);
 }
+.logo{
 
-.box:nth-child(1){
-    display:flex;
-    align-items: flex-start;
-    flex-direction: row;
-    align-items: center;
-    background-color:#2e7270;
-} 
-
+}
 .logo_img{
     width: 60px;
     height: 60px;
     margin-left: 30px;
     margin-top: 10px;
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 nav a{
@@ -42,48 +47,45 @@ nav a{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 30px;
 }
-
-.header__background{
-    
+.promo_wrapper{
     background-image: url("img/main.jpg");
-    width: 1200px;
     height: 600px;
     background-size: cover;
-    order: 3;
-    justify-content: center;
-    background-color:#2e7270;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:repeat(3, 1fr);
     margin-top: 3px;
 }
-.header_h1{
+.promo_wrapper__h1{
     height: 200px;
     display: flex;
+    grid-column: 1/4;
     justify-content: center;
     align-items: flex-end;
+    color: white;
 }
 .header_h1 h1{
     color: white;
 }
-.header_btn{
-    height: 200px;
+.promo_wrapper__btn{
+    grid-column: 1/4;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
-.btn{
-    background-color: #2e7270;
+.promo_wrapper__btn button{
+    background-color:var(--danger-color);
     color: white;
-    height: 60px;
-    width: 250px;
+    height:60px;
+    width: 200px;
     font-size: 20px;
 }
-.s_s{
+.social{
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 200px;
-    
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;  
 }
-.s_s img{
+.social__img{
     height: 80px;
     width: 80px;
     padding: 10px;
